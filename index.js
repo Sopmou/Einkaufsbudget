@@ -2,7 +2,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyBX6y74Z1-a3ae7H88NbnpwzhPn6lbq4Qs",
     authDomain: "einkaufsbudget.firebaseapp.com",
-    databaseURL: "https://einkaufsbudget-default-rtdb.firebaseio.com"
+    databaseURL: "https://einkaufsbudget-default-rtdb.firebaseio.com",
     projectId: "einkaufsbudget",
     storageBucket: "einkaufsbudget.appspot.com",
     messagingSenderId: "241437630660",
