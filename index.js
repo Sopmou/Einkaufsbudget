@@ -1,44 +1,44 @@
-// Budget-Variable
-let budget = 300;
-let lastMonth = null; // Hier speichern wir den Monat, wann das Budget zuletzt zurückgesetzt wurde
+// budgetAshs-Variable
+let budgetAshs = 200;
+let lastMonth = null; // Hier speichern wir den Monat, wann das budgetAshs zuletzt zurückgesetzt wurde
 
-// Funktion zum Abrufen des Budgets und des letzten Monats aus Local Storage
-function fetchBudget() {
-    const savedBudget = localStorage.getItem('budget');
+// Funktion zum Abrufen des budgetAshss und des letzten Monats aus Local Storage
+function fetchbudgetAshs() {
+    const savedbudgetAshs = localStorage.getItem('budgetAshs');
     const savedLastMonth = localStorage.getItem('lastMonth');
 
-    // Wenn Budget und letzter Monat im Local Storage vorhanden sind, laden wir diese
-    if (savedBudget !== null && savedLastMonth !== null) {
-        budget = parseFloat(savedBudget);
+    // Wenn budgetAshs und letzter Monat im Local Storage vorhanden sind, laden wir diese
+    if (savedbudgetAshs !== null && savedLastMonth !== null) {
+        budgetAshs = parseFloat(savedbudgetAshs);
         lastMonth = parseInt(savedLastMonth);
     }
 
-    document.getElementById("einkaufsBudget").innerText = budget + "€";
+    document.getElementById("einkaufsbudgetAshs").innerText = budgetAshs + "€";
 
-    // Monat überprüfen und ggf. Budget zurücksetzen
-    checkAndResetBudget();
+    // Monat überprüfen und ggf. budgetAshs zurücksetzen
+    checkAndResetbudgetAshs();
 }
 
-// Funktion zum Aktualisieren des Budgets und des Monats im Local Storage
-function updateBudgetInLocalStorage() {
+// Funktion zum Aktualisieren des budgetAshss und des Monats im Local Storage
+function updatebudgetAshsInLocalStorage() {
     const currentMonth = new Date().getMonth(); // Aktueller Monat
 
-    // Budget und aktuellen Monat im Local Storage speichern
-    localStorage.setItem('budget', budget);
+    // budgetAshs und aktuellen Monat im Local Storage speichern
+    localStorage.setItem('budgetAshs', budgetAshs);
     localStorage.setItem('lastMonth', currentMonth);
 
-    console.log('Budget erfolgreich in Local Storage aktualisiert');
+    console.log('budgetAshs erfolgreich in Local Storage aktualisiert');
 }
 
-// Funktion zum Zurücksetzen des Budgets am Monatsanfang
-function checkAndResetBudget() {
+// Funktion zum Zurücksetzen des budgetAshss am Monatsanfang
+function checkAndResetbudgetAshs() {
     const currentMonth = new Date().getMonth(); // Aktueller Monat
 
-    // Wenn der Monat sich geändert hat, setze das Budget zurück
+    // Wenn der Monat sich geändert hat, setze das budgetAshs zurück
     if (lastMonth === null || currentMonth !== lastMonth) {
-        budget = 300; // Budget zurücksetzen
-        document.getElementById("einkaufsBudget").innerText = budget + "€";
-        updateBudgetInLocalStorage(); // Local Storage mit dem neuen Budget und Monat aktualisieren
+        budgetAshs = 200; // budgetAshs zurücksetzen
+        document.getElementById("einkaufsbudgetAshs").innerText = budgetAshs + "€";
+        updatebudgetAshsInLocalStorage(); // Local Storage mit dem neuen budgetAshs und Monat aktualisieren
     }
 }
 
@@ -46,11 +46,11 @@ function checkAndResetBudget() {
 document.getElementById("submitButton").addEventListener("click", function() {
     let price = parseFloat(document.getElementById("preisInput").value);
     if (!isNaN(price) && price > 0) {
-        budget -= price;
-        document.getElementById("einkaufsBudget").innerText = budget + "€";
-        updateBudgetInLocalStorage();  // Budget in Local Storage aktualisieren
+        budgetAshs -= price;
+        document.getElementById("einkaufsbudgetAshs").innerText = budgetAshs + "€";
+        updatebudgetAshsInLocalStorage();  // budgetAshs in Local Storage aktualisieren
     }
 });
 
-// Beim Laden der Seite das Budget und den letzten Monat aus Local Storage laden
-fetchBudget();
+// Beim Laden der Seite das budgetAshs und den letzten Monat aus Local Storage laden
+fetchbudgetAshs();
