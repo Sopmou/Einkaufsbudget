@@ -13,7 +13,7 @@ function fetchbudgetAshs() {
         lastMonth = parseInt(savedLastMonth);
     }
 
-    document.getElementById("einkaufsbudget").innerText = budgetAshs + "€";
+    document.getElementById("einkaufsBudget").innerText = budgetAshs + "€";
 
     // Monat überprüfen und ggf. budgetAshs zurücksetzen
     checkAndResetbudgetAshs();
@@ -37,7 +37,7 @@ function checkAndResetbudgetAshs() {
     // Wenn der Monat sich geändert hat, setze das budgetAshs zurück
     if (lastMonth === null || currentMonth !== lastMonth) {
         budgetAshs = 200; // budgetAshs zurücksetzen
-        document.getElementById("einkaufsbudget").innerText = budgetAshs + "€";
+        document.getElementById("einkaufsBudget").innerText = budgetAshs + "€";
         updatebudgetAshsInLocalStorage(); // Local Storage mit dem neuen budgetAshs und Monat aktualisieren
     }
 }
@@ -47,7 +47,7 @@ document.getElementById("submitButton").addEventListener("click", function() {
     let price = parseFloat(document.getElementById("preisInput").value);
     if (!isNaN(price) && price > 0) {
         budgetAshs -= price;
-        document.getElementById("einkaufsbudget").innerText = budgetAshs + "€";
+        document.getElementById("einkaufsBudget").innerText = budgetAshs + "€";
         updatebudgetAshsInLocalStorage();  // budgetAshs in Local Storage aktualisieren
     }
 });
