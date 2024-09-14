@@ -1,5 +1,5 @@
 // budgetSop-Variable
-let budgetSopSop = 100;
+let budgetSop = 100;
 let lastMonth = null; // Hier speichern wir den Monat, wann das budgetSopSop zuletzt zurückgesetzt wurde
 
 // Funktion zum Abrufen des budgetSopSops und des letzten Monats aus Local Storage
